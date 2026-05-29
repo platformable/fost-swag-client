@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #0b0f1c;
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-main-dark: #0b0f1c;
+  --brand-main-color: #fc6200;
+}
+
+@utility main-bg {
+  background-color: var(--color-main-dark);
+}
+@utility brand-bg {
+  background-color: var(--brand-main-color);
+}
+
+@utility main-color {
+  color: var(--brand-main-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +30,36 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-size: 1rem;
+}
+
+/* Reduce el tamaño del placeholder a 12 píxeles */
+input::placeholder {
+  font-size: 12px;
+}
+
+/* Opcional: También compatible para navegadores antiguos */
+input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+input::-moz-placeholder {
+  font-size: 12px;
+}
+input::-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.buttonGradientBg {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px; /* Rounded full */
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.buttonGradientBg:hover {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
 }
