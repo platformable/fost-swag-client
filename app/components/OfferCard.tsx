@@ -1,4 +1,6 @@
 import React from "react"
+import Link from "next/link"
+import { slugify } from "@/utils/sluglify"
 
 type OfferCardProps = {
   provider: string
@@ -52,12 +54,12 @@ export default function OfferCard({
       </div>
 
       {/* CTA */}
-      <a
-        href={ctaHref}
+      <Link
+        href={`/offers/${slugify(provider)}/${slugify(title)}`}
         className="block text-center text-white brand-bg hover:bg-[#E55B00] transition-colors rounded-full py-2.5 px-4 text-sm font-semibold"
       >
         {ctaLabel}
-      </a>
+      </Link>
     </div>
   )
 }

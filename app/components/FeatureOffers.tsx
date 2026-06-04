@@ -2,7 +2,20 @@
 import React, { useState } from "react"
 import OfferCard from "./OfferCard"
 
-export default function FeatureOffers() {
+type FeatureOffersProps = {
+  offers: {
+    data: {
+      id: string
+      sponsor_name: string
+      sponsor_url: string
+      offer_type: string
+      offer_title: string
+      tagline: string
+    }[]
+  }
+}
+
+export default function FeatureOffers({ offers }: FeatureOffersProps) {
   type OfferCategoryType = {
     id: number
     name: string
@@ -79,41 +92,15 @@ export default function FeatureOffers() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  max-w-screen-xl mx-auto mb-12">
-        <OfferCard
-          provider="apimasters.io"
-          category="CREDIT"
-          categoryColor="#16a34a"
-          title="$199 off all courses today"
-          description="Unlock premium learning at a fraction of the price and level up your skills fast"
-        />
-        <OfferCard
-          provider="apimasters.io"
-          category="CREDIT"
-          categoryColor="#16a34a"
-          title="$199 off all courses today"
-          description="Unlock premium learning at a fraction of the price and level up your skills fast"
-        />
-        <OfferCard
-          provider="apimasters.io"
-          category="CREDIT"
-          categoryColor="#16a34a"
-          title="$199 off all courses today"
-          description="Unlock premium learning at a fraction of the price and level up your skills fast"
-        />
-        <OfferCard
-          provider="apimasters.io"
-          category="CREDIT"
-          categoryColor="#16a34a"
-          title="$199 off all courses today"
-          description="Unlock premium learning at a fraction of the price and level up your skills fast"
-        />
-        <OfferCard
-          provider="apimasters.io"
-          category="CREDIT"
-          categoryColor="#16a34a"
-          title="$199 off all courses today"
-          description="Unlock premium learning at a fraction of the price and level up your skills fast"
-        />
+        {offers.data?.map((offer, id) => (
+          <OfferCard
+            key={id}
+            provider={offer.sponsor_name}
+            category={offer.offer_type}
+            title={offer.offer_title}
+            description={offer.tagline}
+          />
+        ))}
       </div>
     </section>
   )
