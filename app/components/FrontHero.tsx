@@ -19,7 +19,7 @@ export default function FrontHero() {
           Exclusive offers, developer perks, ecosystem rewards, tools and
           learning resources from the Futureof Software community.
         </p>
-        <div className="flex flex-col mb-2  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        {/*   <div className="flex flex-col mb-2  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <div className="relative">
             <input
               onMouseEnter={() => {
@@ -53,7 +53,7 @@ export default function FrontHero() {
               </svg>
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
