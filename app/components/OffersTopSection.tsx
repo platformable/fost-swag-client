@@ -12,7 +12,10 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
     audience,
     redemption_method,
     expires_days,
+    logo_url,
   } = (await offer?.data) || {}
+
+  console.log("Offer data in OffersTopSection:", logo_url)
 
   return (
     <section className=" bg-[#03081a] flex items-center justify-center px-8 py-20">
@@ -21,8 +24,9 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
         <div className="flex flex-col">
           <div className="w-56 h-56 bg-neutral-100 rounded-2xl flex items-center justify-center">
             <div className="text-center">
-              <div className="text-6xl font-bold text-slate-600">J</div>
-              <div className="text-5xl font-semibold text-slate-700">entic</div>
+              {/*  <div className="text-6xl font-bold text-slate-600">J</div>
+              <div className="text-5xl font-semibold text-slate-700">entic</div> */}
+              <img src={logo_url} alt="" />
             </div>
           </div>
 
