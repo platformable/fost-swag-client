@@ -15,10 +15,10 @@ export default function Navbar() {
           <img
             src="/logo_fost.svg"
             className="h-7 border-r border-[#FC6200] pr-3"
-            alt="Swag Marketplace Logo"
+            alt="Digital Swag Marketplace Logo"
           />
           <span className="self-center text-xl text-heading font-semibold whitespace-nowrap text-white">
-            Swag Marketplace
+            Digital Swag Marketplace
           </span>
         </Link>
         <div className="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">

@@ -13,7 +13,7 @@ export default function FrontHero() {
           </span>
         </div>
         <h1 className="mb-4 lg:text-6xl md:text-3xl font-extrabold tracking-tight leading-none text-white   dark:text-white">
-          <span className="main-color">Fost Swag</span> Marketplace
+          <span className="main-color">Digital Swag</span> Marketplace
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Exclusive offers, developer perks, ecosystem rewards, tools and
