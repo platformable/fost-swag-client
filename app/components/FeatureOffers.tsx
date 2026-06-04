@@ -92,15 +92,18 @@ export default function FeatureOffers({ offers }: FeatureOffersProps) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  max-w-screen-xl mx-auto mb-12">
-        {offers.data?.map((offer, id) => (
-          <OfferCard
-            key={id}
-            provider={offer.sponsor_name}
-            category={offer.offer_type}
-            title={offer.offer_title}
-            description={offer.tagline}
-          />
-        ))}
+        {offers.data?.map((offer, id) => {
+          return (
+            <OfferCard
+              key={id}
+              id={offer.id}
+              provider={offer.sponsor_name}
+              category={offer.offer_type}
+              title={offer.offer_title}
+              description={offer.tagline}
+            />
+          )
+        })}
       </div>
     </section>
   )

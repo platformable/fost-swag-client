@@ -1,6 +1,9 @@
 import React from "react"
 
-// Componente para el ícono de verificación naranja
+type whatYouGetTypes = {
+  whatYouGet?: string
+}
+
 const CheckIcon = () => (
   <svg
     className="w-5 h-5 text-[#f97316] flex-shrink-0 mt-0.5"
@@ -18,7 +21,23 @@ const CheckIcon = () => (
   </svg>
 )
 
-const OfferCards = () => {
+type OfferCardsProps = {
+  whatYouGet?: string
+  redeemSteps1?: string
+  redeemSteps2?: string
+  redeemSteps3?: string
+  redeemSteps4?: string
+}
+
+const OfferCards = async ({
+  whatYouGet,
+  redeemSteps1,
+  redeemSteps2,
+  redeemSteps3,
+  redeemSteps4,
+}: OfferCardsProps) => {
+  const whatYouGetList = whatYouGet?.split("|") || []
+
   return (
     <section className="">
       <div className=" p-6 flex flex-col gap-y-5  items-center justify-center font-sans">
@@ -27,36 +46,12 @@ const OfferCards = () => {
           <h2 className="text-2xl font-bold text-white mb-8">What You Get</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6">
-            <div className="flex items-start gap-3">
-              <CheckIcon />
-              <span className="text-gray-200 font-medium">
-                Unlimited API Gateway Access
-              </span>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckIcon />
-              <span className="text-gray-200 font-medium">
-                Real-time analytics & logs
-              </span>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckIcon />
-              <span className="text-gray-200 font-medium">
-                Agenti workflow builder
-              </span>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckIcon />
-              <span className="text-gray-200 font-medium">
-                Advanced security & rate limiting
-              </span>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckIcon />
-              <span className="text-gray-200 font-medium">
-                Priority email support
-              </span>
-            </div>
+            {whatYouGetList.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <CheckIcon />
+                <span className="text-gray-200 font-medium">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -73,9 +68,7 @@ const OfferCards = () => {
                   Claim this offer
                 </h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">
-                Click the "Claim Access" button and submit your email address.
-              </p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps1}</p>
             </div>
 
             <div>
@@ -85,10 +78,7 @@ const OfferCards = () => {
                   Activate your access
                 </h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">
-                Follow the instructions in the email to activate your 90-day
-                access.
-              </p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps2}</p>
             </div>
 
             {/* Fila 2 */}
@@ -99,9 +89,7 @@ const OfferCards = () => {
                   Check your inbox
                 </h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">
-                We'll send you an email from Genetic with Your activation code.
-              </p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps3}</p>
             </div>
 
             <div>
@@ -109,9 +97,7 @@ const OfferCards = () => {
                 <span className="text-[#f97316] font-bold text-xl">04</span>
                 <h3 className="text-white font-bold text-lg">Start building</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">
-                Log in and start building powerful APIs And agent workflows.
-              </p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps4}</p>
             </div>
           </div>
         </div>

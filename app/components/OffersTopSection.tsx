@@ -1,6 +1,19 @@
 import React from "react"
 
-export default function OffersTopSection({ brand }: { brand: string }) {
+export default async function OffersTopSection({ offer }: { offer: any }) {
+  const {
+    sponsor_name,
+    sponsor_url,
+    offer_title,
+    offer_desc,
+    offer_type,
+    tagline,
+    offer_value,
+    audience,
+    redemption_method,
+    expires_days,
+  } = (await offer?.data) || {}
+
   return (
     <section className=" bg-[#03081a] flex items-center justify-center px-8 py-20">
       <div className="max-w-7xl w-full grid lg:grid-cols-[280px_1fr_420px] gap-16 items-center">
@@ -16,13 +29,15 @@ export default function OffersTopSection({ brand }: { brand: string }) {
           <div className="mt-8">
             <p className="text-slate-400 text-lg mb-2">Sponsored by</p>
 
-            <h3 className="text-white text-4xl font-semibold mb-4">{brand}</h3>
+            <h3 className="text-white text-4xl font-semibold mb-4">
+              {sponsor_name}
+            </h3>
 
             <a
-              href="#"
+              href={sponsor_url}
               className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-slate-700 transition"
             >
-              {brand.toLowerCase()}.io
+              {sponsor_name}'s website
             </a>
           </div>
         </div>
@@ -30,28 +45,26 @@ export default function OffersTopSection({ brand }: { brand: string }) {
         {/* CENTER */}
         <div>
           <span className="inline-flex items-center px-4 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-200 text-sm tracking-wide uppercase">
-            API Access
+            {offer_type}
           </span>
 
-          <h1 className="mt-6 text-white text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight">
-            Unlimited API
-            <br />
-            Gateway Access
+          <h1 className="mt-6 text-white text-2xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
+            {offer_title}
           </h1>
 
-          <p className="mt-8 max-w-xl text-slate-400 text-2xl leading-relaxed">
-            Build and deploy agentic workflows free for 90 days.
+          <p className="mt-8 max-w-xl text-slate-400 text-xl leading-relaxed">
+            {tagline}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#"
-              className="inline-flex items-center justify-center px-10 py-5 rounded-full buttonGradientBg hover: text-white font-semibold text-lg hover:opacity-90 transition"
+              className="inline-flex text-sm items-center justify-center px-10 py-2 rounded-full buttonGradientBg hover: text-white font-semibold text-lg hover:opacity-90 transition"
             >
               Claim your offer →
             </a>
 
-            <button className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border border-[#ff6b00] text-white text-lg font-medium hover:bg-[#ff6b00]/10 transition">
+            <button className="inline-flex items-center justify-center gap-3 px-10 py-2 rounded-full border border-[#ff6b00] text-white text-lg font-medium hover:bg-[#ff6b00]/10 transition">
               Share
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +97,7 @@ export default function OffersTopSection({ brand }: { brand: string }) {
                   <span className="text-slate-400 text-3xl">$</span>
 
                   <span className="text-[#ff7a1a] text-2xl ">
-                    5,000 credits
+                    {offer_value}
                   </span>
                 </div>
               </div>
@@ -94,7 +107,7 @@ export default function OffersTopSection({ brand }: { brand: string }) {
                   Category
                 </p>
 
-                <p className="text-white text-2xl">API Access</p>
+                <p className="text-white text-2xl">{offer_type}</p>
               </div>
 
               <div className="border-t border-white/10 pt-6">
@@ -102,7 +115,7 @@ export default function OffersTopSection({ brand }: { brand: string }) {
                   Audience
                 </p>
 
-                <p className="text-white text-2xl">FOST attendees & members</p>
+                <p className="text-white text-2xl">{audience}</p>
               </div>
 
               <div className="border-t border-white/10 pt-6">
@@ -110,7 +123,7 @@ export default function OffersTopSection({ brand }: { brand: string }) {
                   Redemption Method
                 </p>
 
-                <p className="text-white text-2xl">Email + code</p>
+                <p className="text-white text-2xl">{redemption_method}</p>
               </div>
 
               <div className="border-t border-white/10 pt-6">
@@ -118,7 +131,7 @@ export default function OffersTopSection({ brand }: { brand: string }) {
                   Expires In
                 </p>
 
-                <p className="text-white text-2xl">30 days</p>
+                <p className="text-white text-2xl">{expires_days} days</p>
               </div>
             </div>
           </div>

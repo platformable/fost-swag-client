@@ -3,6 +3,7 @@ import Link from "next/link"
 import { slugify } from "@/utils/sluglify"
 
 type OfferCardProps = {
+  id: string
   provider: string
   category: string
   categoryColor?: string
@@ -24,6 +25,7 @@ type OfferTypeTypes =
   | "EVENT"
 
 export default function OfferCard({
+  id,
   provider,
   category,
   categoryColor = "#4B5563",
@@ -55,7 +57,7 @@ export default function OfferCard({
 
       {/* CTA */}
       <Link
-        href={`/offers/${slugify(provider)}/${slugify(title)}`}
+        href={`/offers/${slugify(provider)}/${id}/${slugify(title)}`}
         className="block text-center text-white brand-bg hover:bg-[#E55B00] transition-colors rounded-full py-2.5 px-4 text-sm font-semibold"
       >
         {ctaLabel}

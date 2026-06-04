@@ -5,14 +5,26 @@ import Footer from "./components/Footer"
 import { QueryClient } from "@tanstack/react-query"
 
 const getOffers = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers`, {
+    cache: "no-store",
+  })
   if (!res.ok) {
     throw new Error("Failed to fetch offers")
   }
   return res.json()
 }
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+      gcTime: 1000 * 60 * 5,
+      refetchOnWindowFocus: true,
+      refetchOnReconnect: true,
+      refetchOnMount: true,
+    },
+  },
+})
 
 await queryClient.prefetchQuery({
   queryKey: ["offers"],
@@ -33,8 +45,6 @@ type FeatureOffersProps = {
 }
 
 const offers = queryClient.getQueryData(["offers"])
-
-console.log("Offers data on server:", offers)
 
 export default function Home() {
   return (
