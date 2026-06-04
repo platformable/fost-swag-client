@@ -18,7 +18,9 @@ export default function Footer() {
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
+            <div></div>
+            <div></div>
+            {/*  <div>
               <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
                 Resources
               </h2>
@@ -37,8 +39,8 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
-            <div>
+            </div> */}
+            {/*   <div>
               <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
                 Follow us
               </h2>
@@ -57,20 +59,20 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
-                Legal
+                Join FOST
               </h2>
               <ul className="text-body font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Privacy Policy
+                  <a href="#" className="">
+                    Events
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
+                  <a href="#" className="">
+                    Become a sponsor
                   </a>
                 </li>
               </ul>
@@ -78,15 +80,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="sm:flex sm:items-center sm:justify-between py-5">
-          <span className="text-sm text-body sm:text-center">
+        <div className="py-5 text-center ">
+          <span className="text-sm text-center">
             © {new Date().getFullYear()}{" "}
-            <a href="https://joinfost.io/" className="hover:underline">
+            {/*  <a href="https://joinfost.io/" className="hover:underline">
               FOST
-            </a>
-            . All Rights Reserved.
+            </a> */}
+            FOST - Future of Software Technologies Conference. All rights
+            reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
+          {/*  <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a href="#" className="text-body hover:text-heading">
               <svg
                 className="w-5 h-5"
@@ -169,7 +172,7 @@ export default function Footer() {
               </svg>
               <span className="sr-only">Dribbble account</span>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
