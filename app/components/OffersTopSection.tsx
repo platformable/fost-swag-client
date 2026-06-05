@@ -1,5 +1,70 @@
 import React from "react"
 
+type OfferTypeTypes =
+  | "CREDIT"
+  | "DISCOUNT"
+  | "EXCLUSIVE"
+  | "FREE TRIAL"
+  | "FREE"
+  | "API ACCESS"
+  | "SWAG"
+  | "TRAINING"
+  | "EVENT"
+
+type BadgeStyle = {
+  backgroundColor: string
+  border: string
+  text: string
+}
+
+const badgeStyles: Record<OfferTypeTypes, BadgeStyle> = {
+  CREDIT: {
+    backgroundColor: "#0C3B2E",
+    border: "#166534",
+    text: "#34D399",
+  },
+  DISCOUNT: {
+    backgroundColor: "#422006",
+    border: "#92400E",
+    text: "#FCD34D",
+  },
+  EXCLUSIVE: {
+    backgroundColor: "",
+    border: "",
+    text: "",
+  },
+  "FREE TRIAL": {
+    backgroundColor: "#172554",
+    border: "#1E40AF",
+    text: "#7DD3FC",
+  },
+  FREE: {
+    backgroundColor: "#1E1B4B",
+    border: "#3730A3",
+    text: "#A5B4FC",
+  },
+  "API ACCESS": {
+    backgroundColor: "#3B1323",
+    border: "#831843",
+    text: "#F9A8D4",
+  },
+  SWAG: {
+    backgroundColor: "#2D1A3E",
+    border: "#6B21A8",
+    text: "#C4B5FD",
+  },
+  TRAINING: {
+    backgroundColor: "",
+    border: "",
+    text: "",
+  },
+  EVENT: {
+    backgroundColor: "",
+    border: "",
+    text: "",
+  },
+}
+
 export default async function OffersTopSection({ offer }: { offer: any }) {
   const {
     sponsor_name,
@@ -14,6 +79,16 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
     expires_days,
     logo_url,
   } = (await offer?.data) || {}
+
+  const normalizedKey = (offer_type || "").toUpperCase() as OfferTypeTypes
+  const badge = badgeStyles[normalizedKey] ?? {
+    backgroundColor: "transparent",
+    border: "transparent",
+    text: "#ffffff",
+  }
+  const borderStyle = badge.border
+    ? `1px solid ${badge.border}`
+    : "1px solid transparent"
 
   return (
     <section className=" bg-[#03081a] flex items-center justify-center px-8 py-20">
@@ -46,7 +121,14 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
 
         {/* CENTER */}
         <div>
-          <span className="inline-flex items-center px-4 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-200 text-sm tracking-wide uppercase">
+          <span
+            className="inline-flex items-center px-4 py-2 rounded-full text-sm tracking-wide uppercase"
+            style={{
+              backgroundColor: badge.backgroundColor,
+              color: badge.text,
+              border: borderStyle,
+            }}
+          >
             {offer_type}
           </span>
 
@@ -109,7 +191,18 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
                   Category
                 </p>
 
-                <p className="text-white text-2xl">{offer_type}</p>
+                <p className="text-white text-2xl">
+                  <span
+                    className="inline-flex items-center px-4 py-2 rounded-full uppercase tracking-wide text-sm font-semibold"
+                    style={{
+                      backgroundColor: badge.backgroundColor,
+                      color: badge.text,
+                      border: borderStyle,
+                    }}
+                  >
+                    {offer_type}
+                  </span>
+                </p>
               </div>
 
               <div className="border-t border-white/10 pt-6">

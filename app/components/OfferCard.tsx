@@ -24,16 +24,78 @@ type OfferTypeTypes =
   | "TRAINING"
   | "EVENT"
 
+type BadgeStyle = {
+  backgroundColor: string
+  border: string
+  text: string
+}
+
+const badgeStyles: Record<OfferTypeTypes, BadgeStyle> = {
+  CREDIT: {
+    backgroundColor: "#0C3B2E",
+    border: "#166534",
+    text: "#34D399",
+  },
+  DISCOUNT: {
+    backgroundColor: "#422006",
+    border: "#92400E",
+    text: "#FCD34D",
+  },
+  EXCLUSIVE: {
+    backgroundColor: "", // Dato no disponible en la imagen
+    border: "",
+    text: "",
+  },
+  "FREE TRIAL": {
+    backgroundColor: "#172554",
+    border: "#1E40AF",
+    text: "#7DD3FC",
+  },
+  FREE: {
+    backgroundColor: "#1E1B4B",
+    border: "#3730A3",
+    text: "#A5B4FC",
+  },
+  "API ACCESS": {
+    backgroundColor: "#3B1323",
+    border: "#831843",
+    text: "#F9A8D4",
+  },
+  SWAG: {
+    backgroundColor: "#2D1A3E",
+    border: "#6B21A8",
+    text: "#C4B5FD",
+  },
+  TRAINING: {
+    backgroundColor: "", // Dato no disponible en la imagen
+    border: "",
+    text: "",
+  },
+  EVENT: {
+    backgroundColor: "", // Dato no disponible en la imagen
+    border: "",
+    text: "",
+  },
+}
 export default function OfferCard({
   id,
   provider,
   category,
-  categoryColor = "#4B5563",
+
   title,
   description,
   ctaLabel = "Claim your offer →",
   ctaHref = "#",
 }: OfferCardProps) {
+  const normalizedKey = (category || "").toUpperCase() as OfferTypeTypes
+  const badge = badgeStyles[normalizedKey] ?? {
+    backgroundColor: "transparent",
+    border: "transparent",
+    text: "#ffffff",
+  }
+  const borderStyle = badge.border
+    ? `1px solid ${badge.border}`
+    : "1px solid transparent"
   return (
     <div className="flex flex-col justify-between bg-[#131929] border border-[#2a2f45] rounded-2xl p-5 gap-4 min-h-[240px]">
       {/* Top badges */}
@@ -43,7 +105,11 @@ export default function OfferCard({
         </span>
         <span
           className="text-xs font-semibold rounded-full px-3 py-1 uppercase tracking-wide"
-          style={{ backgroundColor: categoryColor, color: "#fff" }}
+          style={{
+            backgroundColor: badge.backgroundColor,
+            color: badge.text,
+            border: borderStyle,
+          }}
         >
           {category}
         </span>
