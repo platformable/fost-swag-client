@@ -87,9 +87,9 @@ export default function FeatureOffers({ offers }: FeatureOffersProps) {
           <span className="font-extrabold main-color">FOST Community</span>.
         </h2>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+      {/*  <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
         {offerCategories.map(offerButton)}
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  max-w-screen-xl mx-auto mb-12">
         {offers.data?.map((offer, id) => {
