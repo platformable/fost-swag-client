@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 
 export default function Footer() {
@@ -6,7 +7,12 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a
+              href="https://joinfost.io/"
+              className="flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src="/logo_fost.svg"
                 className="h-7 border-r border-[#FC6200] pr-3 mr-3"
@@ -66,14 +72,22 @@ export default function Footer() {
               </h2>
               <ul className="text-body font-medium">
                 <li className="mb-4">
-                  <a href="#" className="">
+                  <Link
+                    target="_blank"
+                    href="https://joinfost.io/"
+                    className=""
+                  >
                     Events
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="">
+                  <Link
+                    href="https://docs.google.com/presentation/d/1uDo8zgdkozcezAHq_CLHIjulrm9GMHddgt38RXj82h4/edit?slide=id.g329b9af018a_1_0#slide=id.g329b9af018a_1_0"
+                    target="_blank"
+                    className=""
+                  >
                     Become a sponsor
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

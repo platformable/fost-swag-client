@@ -22,16 +22,17 @@ export default function Navbar() {
           </span>
         </Link>
         <div className="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="hidden sm:inline-flex text-white brand-bg hover:bg-[#E55B00] box-border border border-transparent focus:ring-4 focus:ring-[#FC6200] shadow-xs font-medium leading-5 rounded-md text-sm px-5 py-2 focus:outline-none cursor-pointer"
+          <Link
+            href="https://docs.google.com/presentation/d/1uDo8zgdkozcezAHq_CLHIjulrm9GMHddgt38RXj82h4/edit?slide=id.g329b9af018a_1_0#slide=id.g329b9af018a_1_0"
+            target="_blank"
+            className="hidden sm:inline-flex text-white brand-bg hover:bg-[#FC6200] box-border border  border-[#FC6200] focus:ring-1 focus:ring-[#FC6200]  font-medium leading-5 rounded-lg text-md px-5 py-2 focus:outline-none hover:shadow-md cursor-pointer"
           >
             Become a Sponsor
-          </button>
+          </Link>
           <button
             type="button"
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-base md:hidden hover:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}
           >
@@ -60,36 +61,40 @@ export default function Navbar() {
         >
           <ul className="flex flex-col py-4 px-7 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
             <li>
-              <a
-                href="#"
+              <Link
+                target="_blank"
+                href="https://aboutfost.io/"
                 className="block py-2 px-3 text-heading  text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="https://joinfost.io/"
+                target="_blank"
                 className="block py-2 px-3 text-heading text-white  rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 Marketplace
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="https://joinfost.io/"
                 className="block py-2 px-3 text-heading text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                target="_blank"
               >
                 Join FOST
-              </a>
+              </Link>
             </li>
             <li className="sm:hidden">
-              <button
-                type="button"
-                className="w-full text-left py-2 px-3 text-white brand-bg hover:bg-[#E55B00] rounded-md"
+              <Link
+                href="https://docs.google.com/presentation/d/1uDo8zgdkozcezAHq_CLHIjulrm9GMHddgt38RXj82h4/edit?slide=id.g329b9af018a_1_0#slide=id.g329b9af018a_1_0"
+                target="_blank"
+                className=" py-2 px-3 text-white brand-bg hover:bg-[#FC6200] rounded-lg"
               >
                 Become a Sponsor
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

@@ -15,18 +15,16 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
     logo_url,
   } = (await offer?.data) || {}
 
-  console.log("Offer data in OffersTopSection:", logo_url)
-
   return (
     <section className=" bg-[#03081a] flex items-center justify-center px-8 py-20">
       <div className="max-w-7xl w-full grid lg:grid-cols-[280px_1fr_420px] gap-16 items-center">
         {/* LEFT */}
         <div className="flex flex-col">
           <div className="w-56 h-56 bg-neutral-100 rounded-2xl flex items-center justify-center">
-            <div className="text-center">
+            <div className="text-center w-42 h-42 flex justify-center items-center">
               {/*  <div className="text-6xl font-bold text-slate-600">J</div>
               <div className="text-5xl font-semibold text-slate-700">entic</div> */}
-              <img src={logo_url} alt="" />
+              <img src={logo_url ? logo_url : null} alt="" />
             </div>
           </div>
 
@@ -68,7 +66,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
               Claim your offer →
             </a>
 
-            <button className="inline-flex items-center justify-center gap-3 px-10 py-2 rounded-full border border-[#ff6b00] text-white text-lg font-medium hover:bg-[#ff6b00]/10 transition">
+            {/*  <button className="inline-flex items-center justify-center gap-3 px-10 py-2 rounded-full border border-[#ff6b00] text-white text-lg font-medium hover:bg-[#ff6b00]/10 transition">
               Share
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +82,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
                   d="M8 12l8-5m0 10l-8-5m8-5a2 2 0 110-4 2 2 0 010 4zm0 14a2 2 0 110-4 2 2 0 010 4zM4 14a2 2 0 110-4 2 2 0 010 4z"
                 />
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
 

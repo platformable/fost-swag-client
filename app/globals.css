@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -30,9 +31,12 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--background);
   font-size: 1rem;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Reduce el tamaño del placeholder a 12 píxeles */
