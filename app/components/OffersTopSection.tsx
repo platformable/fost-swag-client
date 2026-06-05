@@ -1,4 +1,5 @@
 import React from "react"
+import ClaimOfferModal from "./claimOfferModal"
 
 type OfferTypeTypes =
   | "CREDIT"
@@ -97,8 +98,6 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
         <div className="flex flex-col">
           <div className="w-56 h-56 bg-neutral-100 rounded-2xl flex items-center justify-center">
             <div className="text-center w-42 h-42 flex justify-center items-center">
-              {/*  <div className="text-6xl font-bold text-slate-600">J</div>
-              <div className="text-5xl font-semibold text-slate-700">entic</div> */}
               <img src={logo_url ? logo_url : null} alt="" />
             </div>
           </div>
@@ -141,30 +140,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#"
-              className="block text-center text-white clainOfferBtn transition-colors rounded-full py-2.5 px-4 text-sm font-semibold focus:outline-none focus:ring-2  focus:ring-[#FF7A1A]"
-            >
-              Claim your offer →
-            </a>
-
-            {/*  <button className="inline-flex items-center justify-center gap-3 px-10 py-2 rounded-full border border-[#ff6b00] text-white text-lg font-medium hover:bg-[#ff6b00]/10 transition">
-              Share
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 12l8-5m0 10l-8-5m8-5a2 2 0 110-4 2 2 0 010 4zm0 14a2 2 0 110-4 2 2 0 010 4zM4 14a2 2 0 110-4 2 2 0 010 4z"
-                />
-              </svg>
-            </button> */}
+            <ClaimOfferModal offer={offer} />
           </div>
         </div>
 
