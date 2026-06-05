@@ -3,7 +3,28 @@ import OfferCta from "@/app/components/OfferCta"
 import OfferCards from "@/app/components/OffersCards"
 import OffersTopSection from "@/app/components/OffersTopSection"
 import TermsConditionBox from "@/app/components/TermsConditionBox"
-import { QueryClient } from "@tanstack/react-query"
+
+type OfferResponse = {
+  data: {
+    id: string
+    sponsor_name: string
+    sponsor_url: string
+    offer_type: string
+    offer_title: string
+    tagline: string
+    offer_desc: string
+    cta_text: string
+    offer_value: string
+    badge_label: string
+    landing_url: string
+    what_you_get: string
+    redeem_step_01: string
+    redeem_step_02: string
+    redeem_step_03: string
+    redeem_step_04: string
+    terms: string
+  }
+}
 
 export default async function OfferPage({
   params,
@@ -12,56 +33,13 @@ export default async function OfferPage({
 }) {
   const { id } = await params
 
-  const getOfferById = async (id: string) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers/${id}`, {
-      cache: "no-store",
-    })
-    if (!res.ok) {
-      throw new Error("Failed to fetch offers")
-    }
-    return res.json()
-  }
-
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        staleTime: 0,
-        gcTime: 1000 * 60 * 5,
-        refetchOnWindowFocus: true,
-        refetchOnReconnect: true,
-        refetchOnMount: true,
-      },
-    },
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers/${id}`, {
+    cache: "no-store",
   })
-
-  await queryClient.prefetchQuery({
-    queryKey: ["offers", id],
-    queryFn: () => getOfferById(id),
-  })
-
-  type OfferResponse = {
-    data: {
-      id: string
-      sponsor_name: string
-      sponsor_url: string
-      offer_type: string
-      offer_title: string
-      tagline: string
-      offer_desc: string
-      cta_text: string
-      offer_value: string
-      badge_label: string
-      landing_url: string
-      what_you_get: string
-      redeem_step_01: string
-      redeem_step_02: string
-      redeem_step_03: string
-      redeem_step_04: string
-      terms: string
-    }
+  if (!res.ok) {
+    throw new Error("Failed to fetch offers")
   }
-
-  const offer = queryClient.getQueryData<OfferResponse>(["offers", id])
+  const offer: OfferResponse = await res.json()
 
   const {
     offer_desc,
