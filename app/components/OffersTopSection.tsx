@@ -143,7 +143,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#"
-              className="inline-flex text-sm items-center justify-center px-10 py-2 rounded-full buttonGradientBg hover: text-white font-semibold text-lg hover:opacity-90 transition"
+              className="block text-center text-white clainOfferBtn transition-colors rounded-full py-2.5 px-4 text-sm font-semibold focus:outline-none focus:ring-2  focus:ring-[#FF7A1A]"
             >
               Claim your offer →
             </a>

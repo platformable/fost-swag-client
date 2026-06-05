@@ -57,7 +57,6 @@ input::-ms-input-placeholder {
 
 .buttonGradientBg {
   background: linear-gradient(90deg, #fc6200, #dd312a);
-
   color: white;
   padding: 10px 20px;
   border-radius: 9999px; /* Rounded full */
@@ -66,4 +65,34 @@ input::-ms-input-placeholder {
 }
 .buttonGradientBg:hover {
   background: linear-gradient(90deg, #dd312a, #fc6200);
+}
+
+.clainOfferBtn {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+  border-radius: 50px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.clainOfferBtn:hover {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
+  border-radius: 50px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.clainOfferBtn:active {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
+  border-radius: 50px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
