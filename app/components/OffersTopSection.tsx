@@ -66,7 +66,48 @@ const badgeStyles: Record<OfferTypeTypes, BadgeStyle> = {
   },
 }
 
-export default async function OffersTopSection({ offer }: { offer: any }) {
+type SponsorOffer = {
+  data: {
+    sponsor_name: string
+    sponsor_url: string
+    logo_url: string
+    offer_type: string
+    id: string
+    sponsor_id: string
+    offer_type_id: string
+    offer_title: string
+    tagline: string
+    cta_text: string
+    offer_value: number
+    badge_label: string
+    is_active: boolean
+    landing_url: string | null
+    created_at: string
+    updated_at: string
+    offer_desc: string
+    what_you_get: string
+    redeem_step_01: string
+    redeem_step_02: string
+    redeem_step_03: string
+    redeem_step_04: string
+    coupon_code: string
+    discount_amount: string
+    price_after_discount: string
+    audience: string
+    redemption_method: string
+    expires_days: number
+    terms: string
+    useful_link_1: string
+    useful_link_2: string
+    course_link: string
+    contact_email: string
+  }
+}
+export default async function OffersTopSection({
+  offer,
+}: {
+  offer: SponsorOffer
+}) {
   const {
     sponsor_name,
     sponsor_url,
@@ -79,6 +120,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
     redemption_method,
     expires_days,
     logo_url,
+    contact_email,
   } = (await offer?.data) || {}
 
   const normalizedKey = (offer_type || "").toUpperCase() as OfferTypeTypes
@@ -98,7 +140,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
         <div className="flex flex-col">
           <div className="w-56 h-56 bg-neutral-100 rounded-2xl flex items-center justify-center">
             <div className="text-center w-42 h-42 flex justify-center items-center">
-              <img src={logo_url ? logo_url : null} alt="" />
+              {logo_url ? <img src={logo_url} alt="" /> : null}
             </div>
           </div>
 
@@ -140,7 +182,7 @@ export default async function OffersTopSection({ offer }: { offer: any }) {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <ClaimOfferModal offer={offer} />
+            <ClaimOfferModal offer={offer.data} />
           </div>
         </div>
 
