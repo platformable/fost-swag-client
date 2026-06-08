@@ -95,7 +95,7 @@ const OfferCards = async ({
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[#f97316] font-bold text-xl">04</span>
-                <h3 className="text-white font-bold text-lg">Start building</h3>
+                <h3 className="text-white font-bold text-lg">Get started</h3>
               </div>
               <p className="text-gray-400 leading-relaxed">{redeemSteps4}</p>
             </div>
