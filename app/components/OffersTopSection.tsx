@@ -192,7 +192,7 @@ export default async function OffersTopSection({
         {/* RIGHT CARD */}
         <div>
           <div className="rounded-3xl border border-[#747271] bg-[#101422] backdrop-blur-sm p-10">
-            <div className="space-y-8">
+            <div className="space-y-2">
               <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
                 <div>
                   <img src="/offer_value_icon.svg" alt="" />
@@ -204,7 +204,7 @@ export default async function OffersTopSection({
 
                   <div className="flex items-center gap-4">
                     <span className="text-[#ff7a1a] text-2xl ">
-                      $ {offer_value}
+                      {offer_value}
                     </span>
                   </div>
                 </div>
