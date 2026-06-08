@@ -65,12 +65,20 @@ export default function Footer() {
               </ul>
             </div> */}
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
+              <Link
+                href="https://joinfost.io"
+                className="mb-6 text-sm font-semibold text-heading uppercase"
+                target="_blank"
+              >
                 Join FOST
-              </h2>
+              </Link>
               <ul className="text-body font-medium">
-                <li className="mb-4">
-                  <Link href="/" className="">
+                <li className="mb-4 mt-4">
+                  <Link
+                    href="https://joinfost.io/events"
+                    className=""
+                    target="_blank"
+                  >
                     Events
                   </Link>
                 </li>
