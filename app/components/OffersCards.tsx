@@ -78,7 +78,7 @@ const OfferCards = async ({
                   Activate your access
                 </h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{redeemSteps2}</p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps3}</p>
             </div>
 
             {/* Fila 2 */}
@@ -89,7 +89,7 @@ const OfferCards = async ({
                   Check your inbox
                 </h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{redeemSteps3}</p>
+              <p className="text-gray-400 leading-relaxed">{redeemSteps2}</p>
             </div>
 
             <div>
