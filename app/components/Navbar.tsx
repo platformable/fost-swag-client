@@ -71,8 +71,8 @@ export default function Navbar() {
             </li> */}
             <li>
               <Link
-                href="https://joinfost.io/"
-                target="_blank"
+                href="/"
+                /* target="_blank" */
                 className="block py-2 px-3 text-heading text-white  rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 Marketplace
@@ -80,9 +80,9 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="https://joinfost.io/"
+                href="/"
                 className="block py-2 px-3 text-heading text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-                target="_blank"
+                /* target="_blank" */
               >
                 Join FOST
               </Link>

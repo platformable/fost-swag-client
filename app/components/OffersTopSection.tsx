@@ -1,5 +1,6 @@
 import React from "react"
 import ClaimOfferModal from "./claimOfferModal"
+import Link from "next/link"
 
 type OfferTypeTypes =
   | "CREDIT"
@@ -151,12 +152,14 @@ export default async function OffersTopSection({
               {sponsor_name}
             </h3>
 
-            <a
-              href={sponsor_url}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-slate-700 transition"
+            <Link
+              href={sponsor_url || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex cursor-pointer items-center justify-center px-8 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-slate-700 transition"
             >
               {sponsor_name}'s website
-            </a>
+            </Link>
           </div>
         </div>
 

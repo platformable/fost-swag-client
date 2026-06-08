@@ -7,10 +7,10 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a
-              href="https://joinfost.io/"
+            <Link
+              href="/"
               className="flex items-center"
-              target="_blank"
+              /*   target="_blank" */
               rel="noopener noreferrer"
             >
               <img
@@ -18,10 +18,8 @@ export default function Footer() {
                 className="h-7 border-r border-[#FC6200] pr-3 mr-3"
                 alt="Swag Marketplace Logo"
               />
-              <span className="text-heading self-center text-2xl font-semibold whitespace-nowrap">
-                Swag Marketplace
-              </span>
-            </a>
+              <span className="main-color mr-1">Digital Swag </span> Marketplace
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div></div>
@@ -72,11 +70,7 @@ export default function Footer() {
               </h2>
               <ul className="text-body font-medium">
                 <li className="mb-4">
-                  <Link
-                    target="_blank"
-                    href="https://joinfost.io/"
-                    className=""
-                  >
+                  <Link href="/" className="">
                     Events
                   </Link>
                 </li>
