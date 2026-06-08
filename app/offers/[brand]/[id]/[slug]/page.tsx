@@ -1,8 +1,10 @@
+import type { Metadata } from "next"
 import AboutThisOffer from "@/app/components/AboutThisOffer"
 import OfferCta from "@/app/components/OfferCta"
 import OfferCards from "@/app/components/OffersCards"
 import OffersTopSection from "@/app/components/OffersTopSection"
 import TermsConditionBox from "@/app/components/TermsConditionBox"
+const shareImg = "/DigitalSwag_url.svg"
 
 type OfferData = {
   sponsor_name: string
@@ -42,6 +44,54 @@ type OfferData = {
 
 type SponsorOffer = {
   data: OfferData
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { brand: string; id: string; slug: string }
+}): Promise<Metadata> {
+  const { id, slug, brand } = await params
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers/${id}`, {
+    cache: "no-store",
+  })
+
+  if (!res.ok) return {}
+
+  const offer: SponsorOffer = await res.json()
+  const { offer_title, tagline, logo_url, sponsor_name } = offer?.data ?? {}
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://joinfost.io"
+  const pageUrl = `${siteUrl}/offers/${brand}/${id}/${slug}`
+
+  const ogImage = shareImg
+    ? {
+        url: shareImg,
+        width: 1200,
+        height: 630,
+        alt: offer_title ?? sponsor_name,
+      }
+    : undefined
+
+  return {
+    title: offer_title ?? sponsor_name,
+    description: tagline,
+    openGraph: {
+      type: "website",
+      title: offer_title ?? sponsor_name,
+      description: tagline,
+      url: pageUrl,
+      siteName: "Fost Digital Marketplace",
+      ...(ogImage && { images: [ogImage] }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: offer_title ?? sponsor_name,
+      description: tagline,
+      ...(ogImage && { images: [ogImage.url] }),
+    },
+  }
 }
 
 export default async function OfferPage({
