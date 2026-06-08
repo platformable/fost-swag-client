@@ -81,7 +81,7 @@ export default async function OfferPage({
         redeemSteps4={redeem_step_04}
       />
       <TermsConditionBox terms={terms} />
-      <OfferCta />
+      {/* <OfferCta /> */}
     </div>
   )
 }
