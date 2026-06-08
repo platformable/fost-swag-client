@@ -4,7 +4,7 @@ import OfferCta from "@/app/components/OfferCta"
 import OfferCards from "@/app/components/OffersCards"
 import OffersTopSection from "@/app/components/OffersTopSection"
 import TermsConditionBox from "@/app/components/TermsConditionBox"
-const shareImg = "/DigitalSwag_url.svg"
+const shareImg = "/DigitalSwag_url.png"
 
 type OfferData = {
   sponsor_name: string

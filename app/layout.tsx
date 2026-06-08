@@ -4,7 +4,7 @@ import "./globals.css"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Providers from "@/app/providers"
-const shareImg = "/DigitalSwag_url.svg"
+const shareImg = "/DigitalSwag_url.png"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://swag.fost.app"
 
