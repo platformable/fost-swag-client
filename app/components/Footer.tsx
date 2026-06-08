@@ -3,7 +3,7 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <footer className="text-white border-t border-gray-700 mt-10">
+    <footer className="text-white border-t border-[#747271] mt-10 bg-[#111525]">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -101,7 +101,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="py-5 text-center border-t border-gray-700 mt-10">
+      <div className="py-5 text-center border-t border-[#747271] mt-10">
         <span className="text-sm text-center">
           © {new Date().getFullYear()}{" "}
           {/*  <a href="https://joinfost.io/" className="hover:underline">

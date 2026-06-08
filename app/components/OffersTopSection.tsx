@@ -135,7 +135,7 @@ export default async function OffersTopSection({
     : "1px solid transparent"
 
   return (
-    <section className=" bg-[#03081a] flex items-center justify-center px-8 py-20">
+    <section className=" flex items-center justify-center px-8 py-20">
       <div className="max-w-7xl w-full grid lg:grid-cols-[280px_1fr_420px] gap-16 items-center">
         {/* LEFT */}
         <div className="flex flex-col">
