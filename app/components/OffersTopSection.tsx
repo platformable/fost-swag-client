@@ -193,61 +193,83 @@ export default async function OffersTopSection({
         <div>
           <div className="rounded-3xl border border-[#747271] bg-[#101422] backdrop-blur-sm p-10">
             <div className="space-y-8">
-              <div>
-                <p className="text-slate-400 uppercase text-sm tracking-wider mb-3">
-                  Offer Value
-                </p>
+              <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
+                <div>
+                  <img src="/offer_value_icon.svg" alt="" />
+                </div>
+                <div>
+                  <p className="text-slate-400 uppercase text-sm tracking-wider mb-3">
+                    Offer Value
+                  </p>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-slate-400 text-3xl">$</span>
-
-                  <span className="text-[#ff7a1a] text-2xl ">
-                    {offer_value}
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[#ff7a1a] text-2xl ">
+                      $ {offer_value}
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <div className="border-t border-white/10 pt-6">
-                <p className="text-[#BCC4D0] uppercase text-sm mb-2">
-                  Category
-                </p>
+              <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
+                <div>
+                  <img src="/category_icon.svg" alt="" />
+                </div>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-[#BCC4D0] uppercase text-sm mb-2">
+                    Category
+                  </p>
 
-                <p className="text-white text-2xl">
-                  <span
-                    className="inline-flex items-center px-4 py-2 rounded-full uppercase tracking-wide text-sm font-semibold"
-                    style={{
-                      backgroundColor: badge.backgroundColor,
-                      color: badge.text,
-                      border: borderStyle,
-                    }}
-                  >
-                    {offer_type}
-                  </span>
-                </p>
+                  <p className="text-white text-2xl">
+                    <span
+                      className="inline-flex items-center px-4 py-2 rounded-full uppercase tracking-wide text-sm font-semibold"
+                      style={{
+                        backgroundColor: badge.backgroundColor,
+                        color: badge.text,
+                        border: borderStyle,
+                      }}
+                    >
+                      {offer_type}
+                    </span>
+                  </p>
+                </div>
               </div>
 
-              <div className="border-t border-white/10 pt-6">
-                <p className="text-[#BCC4D0] uppercase text-sm mb-2">
-                  Audience
-                </p>
-
-                <p className="text-white text-2xl">{audience}</p>
+              <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
+                <div>
+                  <img src="/audience_icon.svg" alt="" />
+                </div>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-[#BCC4D0] uppercase text-sm mb-2">
+                    Audience
+                  </p>
+                  <p className="text-white text-2xl">{audience}</p>
+                </div>
               </div>
 
-              <div className="border-t border-white/10 pt-6">
-                <p className="text-[#BCC4D0] uppercase text-sm mb-2">
-                  Redemption Method
-                </p>
+              <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
+                <div>
+                  <img src="/email_icon.svg" alt="" />
+                </div>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-[#BCC4D0] uppercase text-sm mb-2">
+                    Redemption Method
+                  </p>
 
-                <p className="text-white text-2xl">{redemption_method}</p>
+                  <p className="text-white text-2xl">{redemption_method}</p>
+                </div>
               </div>
 
-              <div className="border-t border-white/10 pt-6">
-                <p className="text-[#BCC4D0] uppercase text-sm mb-2">
-                  Expires In
-                </p>
+              <div className="grid grid-cols-[1fr_11fr]  gap-4 items-center">
+                <div>
+                  <img src="/expires_in_icon.svg" alt="" />
+                </div>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-[#BCC4D0] uppercase text-sm mb-2">
+                    Expires In
+                  </p>
 
-                <p className="text-white text-2xl">{expires_days} days</p>
+                  <p className="text-white text-2xl">{expires_days} days</p>
+                </div>
               </div>
             </div>
           </div>
