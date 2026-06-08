@@ -61,7 +61,7 @@ export default function ClaimOfferModal({ offer }: { offer: SponsorOffer }) {
       title: "Something went wrong",
       description:
         "We couldn’t process your claim. Please try again in a moment.",
-      image: "/modal_email_offer_error_icon.svg",
+      image: "/failed.svg",
     },
   }
 
