@@ -18,7 +18,7 @@ export default function Navbar() {
             alt="Digital Swag Marketplace Logo"
           />
           <span className="self-center text-xl text-heading font-semibold whitespace-nowrap text-white">
-            Digital Swag Marketplace
+            <span className="main-color">Digital Swag</span> Marketplace
           </span>
         </Link>
         <div className="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">
@@ -60,7 +60,7 @@ export default function Navbar() {
           id="navbar-sticky"
         >
           <ul className="flex flex-col py-4 px-7 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
-            <li>
+            {/*   <li>
               <Link
                 target="_blank"
                 href="https://aboutfost.io/"
@@ -68,7 +68,7 @@ export default function Navbar() {
               >
                 About
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="https://joinfost.io/"
