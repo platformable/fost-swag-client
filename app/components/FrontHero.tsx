@@ -7,8 +7,8 @@ export default function FrontHero() {
   return (
     <section className="">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-10 lg:px-12">
-        <div className="inline-flex justify-between items-center py-1 px-7 pr-4 mb-7 text-sm text-gray-700 brand-bg hover:bg-[#E55B00] rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">
-          <span className="text-xs bg-main rounded-full text-white  py-1.5 mr-2 ">
+        <div className="inline-flex justify-between items-center py-1 px-7 pr-4 mb-7 text-sm text-gray-700 brand-bg hover:bg-[#E55B00] rounded-full dark:bg-gray-800 dark:text-white ">
+          <span className="text-xs  rounded-full text-white  py-1.5 mr-2 ">
             POWERED BY THE <strong>FOST ECOSYSTEM</strong>
           </span>
         </div>
