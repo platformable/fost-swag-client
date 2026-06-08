@@ -70,7 +70,7 @@ export default async function OfferPage({
   } = offer?.data || {}
 
   return (
-    <div className="text-white">
+    <div className="text-white pb-10">
       <OffersTopSection offer={offer} />
       <AboutThisOffer offerDescription={offer_desc} />
       <OfferCards
