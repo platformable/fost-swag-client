@@ -11,32 +11,32 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://swag.fost.app"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fost Digital Marketplace",
-    template: "%s | Fost Digital Marketplace",
+    default: "FOST Digital Marketplace",
+    template: "%s | FOST Digital Marketplace",
   },
   description:
-    "Discover exclusive deals and offers powered by The Fost Ecosystem.",
+    "Discover exclusive deals and offers powered by The FOST Ecosystem.",
   openGraph: {
     type: "website",
-    siteName: "Fost Digital Marketplace",
-    title: "Fost Digital Marketplace",
+    siteName: "FOST Digital Marketplace",
+    title: "FOST Digital Marketplace",
     description:
-      "Discover exclusive deals and offers powered by The Fost Ecosystem.",
+      "Discover exclusive deals and offers powered by The FOST Ecosystem.",
     url: siteUrl,
     images: [
       {
         url: shareImg,
         width: 1200,
         height: 630,
-        alt: "Fost Digital Marketplace",
+        alt: "FOST Digital Marketplace",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fost Digital Marketplace",
+    title: "FOST Digital Marketplace",
     description:
-      "Discover exclusive deals and offers powered by The Fost Ecosystem.",
+      "Discover exclusive deals and offers powered by The FOST Ecosystem.",
     images: [shareImg],
   },
 }

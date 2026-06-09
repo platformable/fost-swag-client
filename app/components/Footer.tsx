@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/logo_fost.svg"
                 className="h-7 border-r border-[#FC6200] pr-3 mr-3"
-                alt="Swag Marketplace Logo"
+                alt="Digital Swag Marketplace Logo"
               />
               <span className="main-color mr-1">Digital Swag </span> Marketplace
             </Link>

@@ -97,7 +97,7 @@ export default function OfferCard({
     ? `1px solid ${badge.border}`
     : "1px solid transparent"
   return (
-    <div className="flex flex-col justify-between  border border-[#2a2f45] rounded-2xl p-5 gap-4 min-h-[240px] bg-[#131929]">
+    <div className="flex flex-col justify-between  glow-card rounded-2xl p-5 gap-4 min-h-[240px] ">
       {/* Top badges */}
       <div className="flex items-center justify-between">
         <span className="text-xs text-gray-300 bg-[#1e2438] border border-[#2a2f45] rounded-md px-3 py-1 font-medium">

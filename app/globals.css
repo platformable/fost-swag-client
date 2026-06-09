@@ -96,3 +96,32 @@ input::-ms-input-placeholder {
   font-weight: bold;
   transition: background 0.3s ease;
 }
+
+.bgGradient {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+}
+
+.glow-card {
+  /* Normal State */
+  background: #131929;
+  border: 1px solid #2a2f45;
+  border-radius: 16px;
+
+  /* Transition goes here for smooth hover in AND out */
+  transition: all 0.3s ease;
+
+  /* Optional: Makes it clear the element is interactive */
+  cursor: pointer;
+}
+
+/* Hover State */
+.glow-card:hover {
+  border-color: #fc6200;
+  box-shadow: 0 0 20px rgba(252, 98, 0, 0.15);
+}
+
+/* Click / Active State */
+.glow-card:active {
+  border-color: #ff7a1a;
+  box-shadow: 0 0 30px rgba(252, 98, 0, 0.25);
+}
