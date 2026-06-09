@@ -124,7 +124,7 @@ export default function OfferCard({
       {/* CTA */}
       <Link
         href={`/offers/${slugify(provider)}/${id}/${slugify(title)}`}
-        className="block text-center clainOfferBtn text-white transition-colors rounded-full py-2.5 px-4 text-sm font-semibold focus:outline-none focus:ring-2  focus:ring-[#FF7A1A]"
+        className="block text-center  text-white transition-colors rounded-full py-2.5 px-4 text-sm font-semibold btn-claim-offer"
       >
         {ctaLabel}
       </Link>
