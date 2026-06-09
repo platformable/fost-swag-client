@@ -125,3 +125,82 @@ input::-ms-input-placeholder {
   border-color: #ff7a1a;
   box-shadow: 0 0 30px rgba(252, 98, 0, 0.25);
 }
+
+.btn-claim-offer {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+  border-radius: 50px;
+  color: #ffffff;
+
+  padding: 12px 28px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-claim-offer:hover {
+  background: linear-gradient(90deg, #ff7a1a, #e8382f);
+  box-shadow: 0 4px 12px rgba(252, 98, 0, 0.3);
+}
+
+.btn-claim-offer:active {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(252, 98, 0, 0.2); /* Reduced shadow to simulate pressing down */
+}
+
+.btn-claim-offer {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+  border-radius: 50px;
+  color: #ffffff;
+
+  padding: 12px 28px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-claim-offer:hover {
+  background: linear-gradient(90deg, #ff7a1a, #e8382f);
+  box-shadow: 0 4px 12px rgba(252, 98, 0, 0.3);
+}
+
+.btn-claim-offer:active {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(252, 98, 0, 0.2); /* Reduced shadow to simulate pressing down */
+}
+
+.btn-hero-cta {
+  background: linear-gradient(90deg, #fc6200, #dd312a);
+  border-radius: 50px;
+  color: #ffffff;
+
+  padding: 16px 36px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-hero-cta:hover {
+  background: linear-gradient(90deg, #ff7a1a, #e8382f);
+  box-shadow: 0 4px 12px rgba(252, 98, 0, 0.3);
+}
+
+.btn-hero-cta:active {
+  background: linear-gradient(90deg, #dd312a, #fc6200);
+  transform: scale(0.97);
+  box-shadow: none; /* Removes the hover shadow to emphasize the button being pressed down */
+}

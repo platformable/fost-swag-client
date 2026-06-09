@@ -128,7 +128,7 @@ export default function ClaimOfferModal({ offer }: { offer: SponsorOffer }) {
     <>
       <button
         onClick={openModal}
-        className="cursor-pointer block text-center text-white clainOfferBtn transition-colors rounded-full py-2.5 px-4 text-sm font-semibold focus:outline-none focus:ring-2  focus:ring-[#FF7A1A]"
+        className="cursor-pointer block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
         type="button"
       >
         Claim your offer →
@@ -221,7 +221,7 @@ export default function ClaimOfferModal({ offer }: { offer: SponsorOffer }) {
                 <div className="flex items-center justify-center space-x-4 py-2">
                   <button
                     type="submit"
-                    className="cursor-pointer block text-center text-white clainOfferBtn transition-colors rounded-full py-2.5 px-4 text-sm font-semibold focus:outline-none focus:ring-2  focus:ring-[#FF7A1A]"
+                    className="cursor-pointer block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
                   >
                     Claim your offer →
                   </button>
