@@ -82,7 +82,7 @@ export async function generateMetadata({
       title: offer_title ?? sponsor_name,
       description: tagline,
       url: pageUrl,
-      siteName: "Fost Digital Marketplace",
+      siteName: "FOST Digital Marketplace",
       ...(ogImage && { images: [ogImage] }),
     },
     twitter: {
@@ -131,7 +131,7 @@ export default async function OfferPage({
         redeemSteps4={redeem_step_04}
       />
       <TermsConditionBox terms={terms} />
-      {/* <OfferCta /> */}
+      <OfferCta offer={offer.data} />
     </div>
   )
 }

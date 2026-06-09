@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link
             href="https://docs.google.com/presentation/d/1uDo8zgdkozcezAHq_CLHIjulrm9GMHddgt38RXj82h4/edit?slide=id.g329b9af018a_1_0#slide=id.g329b9af018a_1_0"
             target="_blank"
-            className="hidden sm:inline-flex text-white brand-bg hover:bg-[#FC6200] box-border border  border-[#FC6200] focus:ring-1 focus:ring-[#FC6200]  font-medium leading-5 rounded-lg text-md px-5 py-2 focus:outline-none hover:shadow-md cursor-pointer"
+            className="hidden sm:inline-flex text-white brand-bg hover:ring-3 ring-[#fc60004d] focus:ring-3 focus:ring-[#fc60004d]  font-medium leading-5 rounded-lg text-md px-5 py-2 focus:outline-none hover:shadow-md cursor-pointer"
           >
             Become a Sponsor
           </Link>
