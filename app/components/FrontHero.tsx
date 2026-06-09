@@ -17,7 +17,7 @@ export default function FrontHero() {
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Exclusive offers, developer perks, ecosystem rewards, tools and
-          learning resources from the Futureof Software community.
+          learning resources from the Future of Software community.
         </p>
         {/*   <div className="flex flex-col mb-2  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <div className="relative">
