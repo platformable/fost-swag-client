@@ -1,8 +1,26 @@
 "use client"
 import React, { useRef } from "react"
+import { useRouter } from "next/navigation"
 
-export default function FrontHero() {
+type FrontHeroProps = {
+  initialQuery?: string
+}
+
+export default function FrontHero({ initialQuery = "" }: FrontHeroProps) {
   const lupaRef = useRef<SVGSVGElement>(null)
+  const router = useRouter()
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const query = formData.get("search") as string
+
+    if (query.trim()) {
+      router.push(`/?search=${encodeURIComponent(query.trim())}`)
+    } else {
+      router.push("/")
+    }
+  }
 
   return (
     <section className="">
@@ -19,20 +37,29 @@ export default function FrontHero() {
           Exclusive offers, developer perks, ecosystem rewards, tools and
           learning resources from the Future of Software community.
         </p>
-        {/*   <div className="flex flex-col mb-2  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <div className="relative">
+        <form
+          onSubmit={handleSearch}
+          className="flex flex-col mb-2  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+        >
+          <div className="flex items-center relative w-full sm:w-auto justify-center">
             <input
+              name="search"
+              defaultValue={initialQuery}
               onMouseEnter={() => {
-                lupaRef.current?.classList.add("text-[#FC6200]")
+                lupaRef.current?.classList.add("text-white")
               }}
               onMouseLeave={() => {
                 lupaRef.current?.classList.remove("text-[#FC6200]")
               }}
               type="text"
-              className="border rounded-3xl bg-[#101525] border-gray-600 text-white focus:ring-[#FC6200] hover:border-[#FC6200] focus:border-[#FC6200] block py-2 px-10 pr-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#FC6200] dark:focus:border-[#FC6200] focus:ring-2 focus:ring-[#FC6200] focus:outline-none text-md"
+              className="border rounded-3xl bg-[#101525] border-gray-600 text-white focus:ring-[#FC6200] hover:border-[#FC6200] focus:border-[#FC6200] block py-2 px-10 pr-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#FC6200] dark:focus:border-[#FC6200] focus:ring-0 focus:ring-[#FC6200] focus:outline-none "
               placeholder="Search a product or topic"
             />
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none hover:border-[#FC6200]">
+            <button
+              type="submit"
+              className="flex bgGradient items-center  py-3 px-5 relative right-4  text-white hover:text-white cursor-pointer rounded-tr-3xl rounded-br-3xl"
+              aria-label="Search"
+            >
               <svg
                 ref={lupaRef}
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +78,9 @@ export default function FrontHero() {
                   d="m21 21-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0Z"
                 />
               </svg>
-            </span>
+            </button>
           </div>
-        </div> */}
+        </form>
       </div>
     </section>
   )

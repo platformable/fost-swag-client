@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
-
+import "../globals.css"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import Providers from "@/app/providers"
 const shareImg = "/DigitalSwag_url.png"
 
@@ -46,10 +47,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={``}>
-      <body className="">
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <Providers>
+      <Navbar />
+      {children}
+      <Footer />
+    </Providers>
   )
 }
