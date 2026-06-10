@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react"
+import { useRouter } from "next/navigation"
 import OfferCard from "./OfferCard"
 
 type FeatureOffersProps = {
@@ -12,10 +13,23 @@ type FeatureOffersProps = {
       offer_title: string
       tagline: string
     }[]
+    meta?: {
+      total: number
+      page: number
+      per_page: number
+      total_pages: number
+    }
   }
+  currentPage?: number
+  searchQuery?: string
 }
 
-export default function FeatureOffers({ offers }: FeatureOffersProps) {
+export default function FeatureOffers({
+  offers,
+  currentPage = 1,
+  searchQuery = "",
+}: FeatureOffersProps) {
+  const router = useRouter()
   type OfferCategoryType = {
     id: number
     name: string
@@ -92,19 +106,58 @@ export default function FeatureOffers({ offers }: FeatureOffersProps) {
       </div> */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  max-w-screen-xl mx-auto mb-12">
-        {offers.data?.map((offer, id) => {
-          return (
-            <OfferCard
-              key={id}
-              id={offer.id}
-              provider={offer.sponsor_name}
-              category={offer.offer_type}
-              title={offer.offer_title}
-              description={offer.tagline}
-            />
-          )
-        })}
+        {offers.data.length > 0 ? (
+          offers.data.map((offer, id) => {
+            return (
+              <OfferCard
+                key={id}
+                id={offer.id}
+                provider={offer.sponsor_name}
+                category={offer.offer_type}
+                title={offer.offer_title}
+                description={offer.tagline}
+              />
+            )
+          })
+        ) : (
+          <p className="text-white text-center">No offers found</p>
+        )}
       </div>
+
+      {/* Paginación */}
+      {offers.meta && offers.meta.total_pages > 1 && (
+        <div className="flex justify-center items-center gap-2 max-w-screen-xl mx-auto pb-8">
+          <button
+            onClick={() => {
+              const params = new URLSearchParams()
+              if (searchQuery) params.append("search", searchQuery)
+              params.append("page", (currentPage - 1).toString())
+              router.push(`/?${params.toString()}`)
+            }}
+            disabled={currentPage <= 1}
+            className="px-4 py-2 rounded-lg bg-[#161A29] text-white border border-[#747271] hover:border-[#FC6200] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Previous
+          </button>
+
+          <span className="text-white px-4">
+            Page {currentPage} of {offers.meta.total_pages}
+          </span>
+
+          <button
+            onClick={() => {
+              const params = new URLSearchParams()
+              if (searchQuery) params.append("search", searchQuery)
+              params.append("page", (currentPage + 1).toString())
+              router.push(`/?${params.toString()}`)
+            }}
+            disabled={currentPage >= offers.meta.total_pages}
+            className="px-4 py-2 rounded-lg bg-[#161A29] text-white border border-[#747271] hover:border-[#FC6200] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Next
+          </button>
+        </div>
+      )}
     </section>
   )
 }

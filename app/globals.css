@@ -39,20 +39,18 @@ body {
   font-style: normal;
 }
 
-/* Reduce el tamaño del placeholder a 12 píxeles */
 input::placeholder {
-  font-size: 12px;
+  font-size: 14px;
 }
 
-/* Opcional: También compatible para navegadores antiguos */
 input::-webkit-input-placeholder {
-  font-size: 12px;
+  font-size: 14px;
 }
 input::-moz-placeholder {
-  font-size: 12px;
+  font-size: 14px;
 }
 input::-ms-input-placeholder {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .buttonGradientBg {
