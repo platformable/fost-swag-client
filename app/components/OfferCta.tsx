@@ -54,7 +54,7 @@ export default function OfferCta({ offer }: { offer: SponsorOffer }) {
 
           <ShareModal
             title={`Check out this offer from ${offer.sponsor_name}: ${offer.offer_title}`}
-            url={pageUrl}
+            //url={pageUrl}
           />
         </div>
       </div>
