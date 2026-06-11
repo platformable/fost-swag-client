@@ -131,7 +131,9 @@ export default function ClaimOfferModal({ offer }: { offer: SponsorOffer }) {
         className="cursor-pointer block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
         type="button"
       >
-        Claim your offer →
+        <span className="flex items-center gap-2 text-sm justify-center">
+          Claim your offer →
+        </span>
       </button>
 
       <div
@@ -223,7 +225,9 @@ export default function ClaimOfferModal({ offer }: { offer: SponsorOffer }) {
                     type="submit"
                     className="cursor-pointer block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
                   >
-                    Claim your offer →
+                    <div className="flex items-center gap-2 text-sm justify-center">
+                      Claim your offer →
+                    </div>
                   </button>
                 </div>
                 <p className="text-center text-gray-400">

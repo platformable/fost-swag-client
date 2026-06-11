@@ -1,6 +1,8 @@
 import React from "react"
 import ClaimOfferModal from "./claimOfferModal"
 
+import ShareModal from "./ShareModal"
+
 type SponsorOffer = {
   sponsor_name: string
   sponsor_url: string
@@ -38,14 +40,23 @@ type SponsorOffer = {
 }
 
 export default function OfferCta({ offer }: { offer: SponsorOffer }) {
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/offers/${offer.sponsor_name}/${offer.id}/${offer.offer_title.toLowerCase().replace(/\s+/g, "-")}`
   return (
-    <section className="py-16">
+    <section className="py-5">
       <div className="max-w-screen-xl mx-auto px-8 py-16 bg-[#111525] rounded-2xl border border-[#FB6001] flex flex-col items-center justify-center shadow-lg shadow-orange-800/60">
         <h2 className="text-4xl font-semibold mb-4">{offer.offer_title}</h2>
         <p className="text-slate-400 text-lg leading-relaxed mb-8">
           {offer.tagline}
         </p>
-        <ClaimOfferModal offer={offer} />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ClaimOfferModal offer={offer} />
+
+          <ShareModal
+            title={`Check out this offer from ${offer.sponsor_name}: ${offer.offer_title}`}
+            url={pageUrl}
+          />
+        </div>
       </div>
     </section>
   )

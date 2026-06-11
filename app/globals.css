@@ -202,3 +202,38 @@ input::-ms-input-placeholder {
   transform: scale(0.97);
   box-shadow: none; /* Removes the hover shadow to emphasize the button being pressed down */
 }
+
+/* --- Estado Normal --- */
+.share-button {
+  background-color: transparent;
+  border: 1px solid #747271;
+  color: #ffffff;
+  border-radius: 50px;
+
+  /* Propiedades extra recomendadas para que se vea y funcione como botón */
+  padding: 10px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Transición suave para el hover y el click */
+  transition: all 0.2s ease-in-out;
+}
+
+/* --- Estado Hover (al pasar el ratón) --- */
+.share-button:hover {
+  border-color: #fc6200;
+  color: #ffffff; /* Se mantiene blanco */
+}
+
+/* --- Estado Click (active) --- */
+.share-button:active {
+  background-color: rgba(252, 98, 0, 0.1);
+  border-color: #fc6200;
+  transform: scale(0.97);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+}
