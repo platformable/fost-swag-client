@@ -6,14 +6,14 @@ export default function AboutPage() {
     <>
       <section className="text-white antialiased min-h-screen py-16 px-4 sm:px-6 lg:px-8  justify-center">
         <div
-          className="hidden lg:block
+          className="hidden xl:block
       absolute
-      right-[-150px]
+      right-[10px]
       top-[50px]
       h-[700px]
       w-[700px]
       rounded-full
-      bg-orange-500/30
+      bg-orange-500/10
       blur-[120px]
     "
         />
@@ -60,7 +60,31 @@ export default function AboutPage() {
               <span className="text-[#BCC4D0] text-xl">Sponsors</span>
             </div>
           </div>
+          <div
+            className="hidden xl:block
+      absolute
+      right-[200px]
+      top-[870px]
+      h-[700px]
+      w-[700px]
+      rounded-full
+      bg-orange-500/10
+      blur-[120px]
+    "
+          />
 
+          <div
+            className="hidden xl:block
+      absolute
+      left-[-100px]
+      top-[800px]
+      h-[500px]
+      w-[500px]
+      rounded-full
+      bg-[#2CD0BC7C]/20
+      blur-[140px]
+    "
+          />
           <div className="text-center space-y-6 mt-20 mb-20">
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
               A Swag Bag That Lives Beyond The Booth.
