@@ -157,7 +157,7 @@ const PLATFORMS: SharePlatform[] = [
 
 interface ShareButtonProps {
   /** Override the URL to share. Defaults to window.location.href */
-  url?: string
+  //url?: string
   /** Override the page title. Defaults to document.title */
   title?: string
   /** Button label */
@@ -165,20 +165,23 @@ interface ShareButtonProps {
 }
 
 export default function ShareModal({
-  url,
   title,
   label = "Share",
 }: ShareButtonProps) {
-  const pathname = typeof window !== "undefined" ? window.location.href : ""
   const [isOpen, setIsOpen] = useState(false)
   const [copied, setCopied] = useState(false)
-  const [shareUrl, setShareUrl] = useState(pathname)
+  const [shareUrl, setShareUrl] = useState("")
   const [shareTitle, setShareTitle] = useState(title ?? "")
 
-  useEffect(() => {
-    if (!url) setShareUrl(pathname)
+  const pathname = usePathname()
+
+  const pageUrl = process.env.NEXT_PUBLIC_SITE_URL + pathname
+  console.log("Current page URL:", pageUrl)
+
+  /*   useEffect(() => {
+    if (!url) setShareUrl(pageUrl)
     if (!title) setShareTitle(document.title)
-  }, [url, title])
+  }, [title]) */
 
   const handleOpen = () => setIsOpen(true)
   const handleClose = useCallback(() => setIsOpen(false), [])
@@ -207,8 +210,9 @@ export default function ShareModal({
   }
 
   const handleCopy = async () => {
+    console.log("Copying URL:", shareUrl)
     try {
-      await navigator.clipboard.writeText(shareUrl)
+      await navigator.clipboard.writeText(pageUrl)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
@@ -310,7 +314,7 @@ export default function ShareModal({
               </p>
               <div className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-800">
                 <span className="flex-1 truncate text-xs text-zinc-600 dark:text-zinc-300 select-all">
-                  {pathname}
+                  {pageUrl || "No URL to share"}
                 </span>
                 <button
                   onClick={handleCopy}
