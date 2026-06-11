@@ -1,6 +1,8 @@
 import React from "react"
 import ClaimOfferModal from "./claimOfferModal"
 import Link from "next/link"
+import ShareButton from "./SocialShare"
+import ShareModal from "./ShareModal"
 
 type OfferTypeTypes =
   | "CREDIT"
@@ -124,6 +126,8 @@ export default async function OffersTopSection({
     contact_email,
   } = (await offer?.data) || {}
 
+  const pageUrl = typeof window !== "undefined" ? window.location.href : ""
+
   const normalizedKey = (offer_type || "").toUpperCase() as OfferTypeTypes
   const badge = badgeStyles[normalizedKey] ?? {
     backgroundColor: "transparent",
@@ -184,8 +188,16 @@ export default async function OffersTopSection({
             {tagline}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex grid grid-cols-1 md:grid-cols-2 gap-4">
             <ClaimOfferModal offer={offer.data} />
+            {/*  <ShareButton
+              title={`Check out this offer from ${sponsor_name}: ${offer_title}`}
+              url={pageUrl || "#"}
+            /> */}
+            <ShareModal
+              title={`Check out this offer from ${sponsor_name}: ${offer_title}`}
+              url={pageUrl || "#"}
+            />
           </div>
         </div>
 
