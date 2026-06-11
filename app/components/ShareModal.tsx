@@ -2,6 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { usePathname } from "next/navigation"
+import { FaLinkedin } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
+import { MdOutlineEmail } from "react-icons/md"
 type Platform = "twitter" | "linkedin" | "email"
 
 interface SharePlatform {
@@ -110,7 +113,7 @@ const PLATFORMS: SharePlatform[] = [
     label: "Email",
     color: "bg-slate-600",
     hoverColor: "hover:bg-slate-700",
-    icon: <EmailIcon />,
+    icon: <MdOutlineEmail />,
     getUrl: (url, title) =>
       `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`,
   },
@@ -119,7 +122,7 @@ const PLATFORMS: SharePlatform[] = [
     label: "LinkedIn",
     color: "bg-[#0A66C2]",
     hoverColor: "hover:bg-[#0858a8]",
-    icon: <LinkedInIcon />,
+    icon: <FaLinkedin />,
     getUrl: (url) =>
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
   },
@@ -128,7 +131,7 @@ const PLATFORMS: SharePlatform[] = [
     label: "X / Twitter",
     color: "bg-black",
     hoverColor: "hover:bg-zinc-800",
-    icon: <XIcon />,
+    icon: <FaXTwitter />,
     getUrl: (url, title) =>
       `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
   },
@@ -281,12 +284,23 @@ export default function ShareModal({
                   key={platform.id}
                   onClick={() => handleShare(platform)}
                   title={platform.label}
-                  className={`flex flex-col items-center gap-1.5 rounded-xl p-6 text-white transition-all duration-150 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${platform.color} ${platform.hoverColor} social-icon`}
+                  className={`flex flex-col items-center gap-1.5 rounded-xl p-4 text-white transition-all duration-150 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${platform.color} ${platform.hoverColor} `}
                 >
-                  {platform.icon}
-                  {/* <span className="text-[10px] font-medium leading-none truncate w-full text-center">
-                    {platform.label.split(" ")[0]}
-                  </span> */}
+                  {platform.label === "Email" ? (
+                    <span className="text-[50px]">
+                      <MdOutlineEmail />
+                    </span>
+                  ) : null}
+                  {platform.label === "LinkedIn" ? (
+                    <span className="text-[50px]">
+                      <FaLinkedin />
+                    </span>
+                  ) : null}
+                  {platform.label === "X / Twitter" ? (
+                    <span className="text-[50px]">
+                      <FaXTwitter />
+                    </span>
+                  ) : null}
                 </button>
               ))}
             </div>
