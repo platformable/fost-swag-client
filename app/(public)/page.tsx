@@ -1,9 +1,18 @@
 import FrontHero from "../components/FrontHero"
 import FeatureOffers from "../components/FeatureOffers"
 
-const getOffers = async (query?: string, page: number = 1) => {
+const getOffers = async (
+  query?: string,
+  page: number = 1,
+  categories?: string[],
+) => {
   const params = new URLSearchParams()
   if (query) params.append("search", query)
+  if (categories && categories.length > 0) {
+    categories.forEach((c) => {
+      if (c && c !== "All") params.append("category", c)
+    })
+  }
   params.append("page", page.toString())
 
   const url = `${process.env.NEXT_PUBLIC_API_URL}/offers?${params.toString()}`
@@ -33,6 +42,7 @@ type FeatureOffersProps = {
 type SearchParams = {
   search?: string
   page?: string
+  category?: string | string[]
 }
 
 export default async function Home({
@@ -43,8 +53,18 @@ export default async function Home({
   const params = await searchParams
   const query = params?.search || ""
   const page = parseInt(params?.page || "1", 10)
+  const rawCategory = params?.category
+  const categories = rawCategory
+    ? Array.isArray(rawCategory)
+      ? rawCategory
+      : [rawCategory]
+    : []
 
-  const offers = await getOffers(query, page)
+  const offers = await getOffers(
+    query,
+    page,
+    categories.length ? categories : undefined,
+  )
 
   return (
     <main className="">
@@ -53,6 +73,7 @@ export default async function Home({
         offers={offers as FeatureOffersProps["offers"]}
         currentPage={page}
         searchQuery={query}
+        selectedCategories={categories}
       />
     </main>
   )

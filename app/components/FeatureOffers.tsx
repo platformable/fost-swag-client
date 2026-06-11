@@ -1,6 +1,6 @@
 "use client"
-import React, { useState } from "react"
-import { useRouter } from "next/navigation"
+import React, { useEffect } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import OfferCard from "./OfferCard"
 
 type FeatureOffersProps = {
@@ -22,14 +22,32 @@ type FeatureOffersProps = {
   }
   currentPage?: number
   searchQuery?: string
+  selectedCategories?: string[]
 }
 
 export default function FeatureOffers({
   offers,
   currentPage = 1,
   searchQuery = "",
+  selectedCategories = [],
 }: FeatureOffersProps) {
   const router = useRouter()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    try {
+      const s = sessionStorage.getItem("swag-scroll")
+      if (s) {
+        const y = parseInt(s, 10)
+        if (!Number.isNaN(y)) {
+          window.scrollTo(0, y)
+        }
+        sessionStorage.removeItem("swag-scroll")
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }, [searchParams?.toString()])
   type OfferCategoryType = {
     id: number
     name: string
@@ -48,40 +66,64 @@ export default function FeatureOffers({
     { id: 10, name: "Swag & Merch" },
   ]
 
-  const ALL_ID = 1
-  const nonAllIds = offerCategories
-    .filter((c) => c.id !== ALL_ID)
-    .map((c) => c.id)
+  const handleCategoryClick = (categoryName: string) => {
+    const params = new URLSearchParams(searchParams?.toString() || "")
 
-  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set([ALL_ID]))
+    const existing = params.getAll("category")
+    const next = new Set(existing)
 
-  const handleClick = (id: number) => {
-    setSelectedIds((prev) => {
-      if (id === ALL_ID) {
-        // clicking "All" always resets to just "All"
-        return new Set([ALL_ID])
+    if (categoryName === "All") {
+      params.delete("category")
+    } else {
+      if (next.has(categoryName)) {
+        // remove the category
+        const remaining = existing.filter((c) => c !== categoryName)
+        params.delete("category")
+        remaining.forEach((c) => params.append("category", c))
+      } else {
+        params.append("category", categoryName)
       }
-      const next = new Set(prev)
-      next.delete(ALL_ID) // deselect "All" when picking a specific category
-      next.has(id) ? next.delete(id) : next.add(id)
-      // if nothing is selected or all non-All are selected, revert to "All"
-      if (next.size === 0 || nonAllIds.every((nid) => next.has(nid))) {
-        return new Set([ALL_ID])
-      }
-      return next
-    })
+      // if after toggle there are no categories selected, remove the param (All)
+      if (params.getAll("category").length === 0) params.delete("category")
+    }
+
+    // clear search when selecting categories (category filter overrides input)
+    params.delete("search")
+    try {
+      const inp = document.querySelector(
+        'input[name="search"]',
+      ) as HTMLInputElement | null
+      if (inp) inp.value = ""
+    } catch (e) {
+      /* ignore */
+    }
+    // reset to page 1 when changing categories
+    params.set("page", "1")
+
+    try {
+      sessionStorage.setItem("swag-scroll", String(window.scrollY || 0))
+    } catch (e) {
+      /* ignore */
+    }
+    router.push(`/?${params.toString()}`)
   }
 
   const offerButton = (category: OfferCategoryType) => {
-    const isSelected = selectedIds.has(category.id)
+    const urlCategories = searchParams?.getAll("category") || []
+    const effectiveSelected = urlCategories.length
+      ? urlCategories
+      : selectedCategories
+    const isSelected =
+      (effectiveSelected.length === 0 && category.name === "All") ||
+      effectiveSelected.includes(category.name)
     return (
       <button
         key={category.id}
         type="button"
-        onClick={() => handleClick(category.id)}
-        className={`box-border focus:ring-4 focus:ring-[#FC6200] shadow-xs font-medium leading-5 rounded-full text-sm px-5 py-2 focus:outline-none cursor-pointer text-white ${
+        onClick={() => handleCategoryClick(category.name)}
+        className={`box-border focus:ring-0 shadow-xs font-medium leading-5 rounded-full text-sm px-5 py-2 focus:outline-none cursor-pointer text-white ${
           isSelected
-            ? "buttonGradientBg border border-transparent hover:buttonGradientBgHover"
+            ? "buttonGradientBg  hover:buttonGradientBgHover"
             : "bg-[#161A29] border border-[#747271] hover:border-[#FC6200]"
         }`}
       >
@@ -101,9 +143,9 @@ export default function FeatureOffers({
           <span className="font-extrabold main-color">FOST Community</span>.
         </h2>
       </div>
-      {/*  <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
         {offerCategories.map(offerButton)}
-      </div> */}
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  max-w-screen-xl mx-auto mb-12">
         {offers.data.length > 0 ? (
@@ -131,7 +173,20 @@ export default function FeatureOffers({
             onClick={() => {
               const params = new URLSearchParams()
               if (searchQuery) params.append("search", searchQuery)
+              const urlCategories =
+                searchParams?.getAll("category") || selectedCategories || []
+              urlCategories.forEach((c) => {
+                if (c && c !== "All") params.append("category", c)
+              })
               params.append("page", (currentPage - 1).toString())
+              try {
+                sessionStorage.setItem(
+                  "swag-scroll",
+                  String(window.scrollY || 0),
+                )
+              } catch (e) {
+                /* ignore */
+              }
               router.push(`/?${params.toString()}`)
             }}
             disabled={currentPage <= 1}
@@ -148,7 +203,20 @@ export default function FeatureOffers({
             onClick={() => {
               const params = new URLSearchParams()
               if (searchQuery) params.append("search", searchQuery)
+              const urlCategories =
+                searchParams?.getAll("category") || selectedCategories || []
+              urlCategories.forEach((c) => {
+                if (c && c !== "All") params.append("category", c)
+              })
               params.append("page", (currentPage + 1).toString())
+              try {
+                sessionStorage.setItem(
+                  "swag-scroll",
+                  String(window.scrollY || 0),
+                )
+              } catch (e) {
+                /* ignore */
+              }
               router.push(`/?${params.toString()}`)
             }}
             disabled={currentPage >= offers.meta.total_pages}

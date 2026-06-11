@@ -56,7 +56,7 @@ input::-ms-input-placeholder {
 .buttonGradientBg {
   background: linear-gradient(90deg, #fc6200, #dd312a);
   color: white;
-  padding: 10px 20px;
+  /*   padding: 10px 20px; */
   border-radius: 9999px; /* Rounded full */
   font-weight: bold;
   transition: background 0.3s ease;
