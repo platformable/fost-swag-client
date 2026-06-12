@@ -9,10 +9,10 @@ export default function AboutHero() {
             POWERED BY THE <strong>FOST ECOSYSTEM</strong>
           </span>
         </div>
-        <h1 className="mb-4 lg:text-6xl md:text-3xl font-extrabold tracking-tight leading-none text-white   dark:text-white">
+        <h1 className="mb-4 lg:text-6xl md:text-3xl text-2xl font-extrabold tracking-tight leading-none text-white   dark:text-white">
           Exclusive offers. <span className="main-color"> Real leads.</span>
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+        <p className="mb-8 text-lg font-normal text-gray-500 text-xs lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           The FOST Swag Marketplace turns sponsor perks into claimable offers.
           Credits, trials, training and tools for the community, and qualified
           leads for the sponsors who provide them.
