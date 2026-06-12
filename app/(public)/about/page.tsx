@@ -266,15 +266,15 @@ export default function AboutPage() {
               <div className="inline-block px-3 py-1 bg-[#132734] text-[#2DD4BF]   rounded-full mb-6 uppercase">
                 Attendees
               </div>
-              <h3 className="text-2xl font-semibold text-slate-100 mb-3">
+              <h3 className="text-2xl font-semibold text-slate-100 mb-3 border-b border-[#636670] pb-4">
                 Claim Your Offer
               </h3>
-              <p className=" text-slate-400 mb-10">
+              {/* <p className=" text-slate-400 mb-10">
                 Everything FOST attendees, developers and creators get.
-              </p>
+              </p> */}
 
-              <div className="space-y-8">
-                <div className="flex  space-x-4 items-center ">
+              <div className="">
+                <div className="flex  space-x-4 items-center border-b border-[#636670] pt-2 pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#2DD4BF] text-[#0b0e14] font-bold text-2xl flex items-center justify-center">
                     01
                   </div>
@@ -287,7 +287,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex  space-x-4 items-center ">
+                <div className="flex  space-x-4 items-center border-b border-[#636670] pt-5  pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#2DD4BF] text-[#111525] font-bold text-2xl flex items-center justify-center">
                     02
                   </div>
@@ -300,7 +300,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex  space-x-4 items-center ">
+                <div className="flex  space-x-4 items-center  pt-5  pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#2DD4BF] text-[#111525] font-bold text-2xl flex items-center justify-center">
                     03
                   </div>
@@ -321,15 +321,15 @@ export default function AboutPage() {
               <div className="inline-block px-3 py-1 bg-[#272228] text-[#F56515]   rounded-full mb-6 uppercase">
                 Sponsors
               </div>
-              <h3 className="text-2xl font-semibold text-slate-100 mb-3">
+              <h3 className="text-2xl font-semibold text-slate-100 mb-3 border-b border-[#636670] pb-4">
                 Publish & Capture
               </h3>
-              <p className=" text-slate-400 mb-10">
+              {/*  <p className=" text-slate-400 mb-10">
                 A measurable funnel that outlives the conference floor.
-              </p>
+              </p> */}
 
-              <div className="space-y-8">
-                <div className="flex  space-x-4 items-center ">
+              <div className="">
+                <div className="flex  space-x-4 items-center border-b border-[#636670] pt-2 pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#F56515] text-[#111525] font-bold text-2xl flex items-center justify-center">
                     01
                   </div>
@@ -340,7 +340,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex  space-x-4 items-center ">
+                <div className="flex  space-x-4 items-center border-b border-[#636670] pt-5 pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#F56515] text-[#111525] font-bold text-2xl flex items-center justify-center">
                     02
                   </div>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex  space-x-4 items-center ">
+                <div className="flex  space-x-4 items-center pt-5 pb-6">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#F56515] text-[#111525] font-bold text-2xl flex items-center justify-center">
                     03
                   </div>
