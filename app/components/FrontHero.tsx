@@ -30,10 +30,10 @@ export default function FrontHero({ initialQuery = "" }: FrontHeroProps) {
             POWERED BY THE <strong>FOST ECOSYSTEM</strong>
           </span>
         </div>
-        <h1 className="mb-4 lg:text-6xl md:text-3xl font-extrabold tracking-tight leading-none text-white   dark:text-white">
+        <h1 className="mb-4 lg:text-6xl md:text-3xl text-2xl font-extrabold tracking-tight leading-none text-white   dark:text-white">
           <span className="main-color">Digital Swag</span> Marketplace
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+        <p className="mb-8 text-lg font-normal text-gray-500 text-xs lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Exclusive offers, developer perks, ecosystem rewards, tools and
           learning resources from the Future of Software community.
         </p>
