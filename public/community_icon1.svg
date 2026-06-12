@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.057" height="39.269" viewBox="0 0 38.057 39.269">
+  <g id="real" transform="translate(0.803 0.8)">
+    <g id="Group_57672" data-name="Group 57672" transform="translate(-290.432 -1566.5)">
+      <path id="Union_2" data-name="Union 2" d="M4.569,37.669A4.546,4.546,0,0,1,.017,32.662L2.749,8.08H7.3C7.432,4.145,10.861,0,18.226,0S29.02,4.145,29.147,8.08H33.7l2.731,24.582a4.546,4.546,0,0,1-4.552,5.007ZM25.5,8.08a3.851,3.851,0,0,0-1.992-3.1,10.158,10.158,0,0,0-5.285-1.339c-3.424,0-7.1,1.391-7.277,4.438Z" transform="translate(290.432 1566.5)" fill="none" stroke="#2dd4bf" stroke-width="1.6"/>
+    </g>
+    <g id="Group_57673" data-name="Group 57673" transform="translate(-290.432 -1566.5)">
+      <path id="Path_34044" data-name="Path 34044" d="M20.184,5.8,10,18.136" transform="translate(293.567 1577.308)" fill="none" stroke="#2dd4bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+      <g id="Ellipse_986" data-name="Ellipse 986" transform="translate(301 1581)" fill="none" stroke="#2dd4bf" stroke-width="1.6">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.7" fill="none"/>
+      </g>
+      <g id="Ellipse_987" data-name="Ellipse 987" transform="translate(312 1592)" fill="none" stroke="#2dd4bf" stroke-width="1.6">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.7" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg id="Before" xmlns="http://www.w3.org/2000/svg" width="38" height="48" viewBox="0 0 38 48">
+  <g id="Group_57676" data-name="Group 57676" transform="translate(-283.59 -1861)">
+    <g id="Group_57675" data-name="Group 57675" transform="translate(291.863 1877)">
+      <path id="Union_2" data-name="Union 2" d="M2.689,22.169A2.675,2.675,0,0,1,.01,19.222L1.618,4.755H4.3C4.374,2.439,6.392,0,10.726,0s6.353,2.439,6.427,4.755h2.681l1.607,14.467a2.675,2.675,0,0,1-2.679,2.947ZM15.009,4.755a2.266,2.266,0,0,0-1.172-1.824,5.978,5.978,0,0,0-3.11-.788c-2.015,0-4.18.819-4.283,2.612Z" transform="translate(0 0)" fill="none" stroke="#2dd4bf" stroke-width="1.4"/>
+    </g>
+    <g id="Group_57674" data-name="Group 57674" transform="translate(298.083 1885.534)">
+      <path id="Path_34044" data-name="Path 34044" d="M15.992,5.8l-6,7.26" transform="translate(-8.487 -4.56)" fill="none" stroke="#2dd4bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+      <g id="Ellipse_986" data-name="Ellipse 986" transform="translate(0 0)" fill="none" stroke="#2dd4bf" stroke-width="1.4">
+        <ellipse cx="1.471" cy="1.471" rx="1.471" ry="1.471" stroke="none"/>
+        <ellipse cx="1.471" cy="1.471" rx="0.771" ry="0.771" fill="none"/>
+      </g>
+      <g id="Ellipse_987" data-name="Ellipse 987" transform="translate(6.474 6.474)" fill="none" stroke="#2dd4bf" stroke-width="1.4">
+        <ellipse cx="1.471" cy="1.471" rx="1.471" ry="1.471" stroke="none"/>
+        <ellipse cx="1.471" cy="1.471" rx="0.771" ry="0.771" fill="none"/>
+      </g>
+    </g>
+  </g>
+  <g id="Rectangle_7597" data-name="Rectangle 7597" fill="none" stroke="#2dd4bf" stroke-width="2">
+    <rect width="38" height="48" rx="7" stroke="none"/>
+    <rect x="1" y="1" width="36" height="46" rx="6" fill="none"/>
+  </g>
+  <g id="Rectangle_7598" data-name="Rectangle 7598" transform="translate(12 4)" fill="none" stroke="#2dd4bf" stroke-width="2">
+    <rect width="14" height="4" rx="2" stroke="none"/>
+    <rect x="1" y="1" width="12" height="2" rx="1" fill="none"/>
+  </g>
+</svg>

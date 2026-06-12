@@ -21,8 +21,8 @@ type OfferData = {
   badge_label: string
   is_active: boolean
   landing_url: string | null
-  created_at: string // o Date si lo parseas
-  updated_at: string // o Date si lo parseas
+  created_at: string
+  updated_at: string
   offer_desc: string
   what_you_get: string
   redeem_step_01: string
@@ -130,7 +130,7 @@ export default async function OfferPage({
         redeemSteps3={redeem_step_03}
         redeemSteps4={redeem_step_04}
       />
-      <TermsConditionBox terms={terms} />
+      <TermsConditionBox offer={offer.data} />
       <OfferCta offer={offer.data} />
     </div>
   )
