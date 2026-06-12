@@ -19,12 +19,11 @@ export default function AboutHero() {
         </p>
         <div className="flex justify-center">
           <Link
+            className="cursor-pointer z-10 block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
             href="/"
-            className="cursor-pointer block text-center text-white btn-hero-cta transition-colors rounded-full py-2.5 px-4 text-sm font-semibold "
-            type="button"
           >
-            <span className="flex items-center gap-2 md:text-2xl justify-center">
-              Browser the offers →
+            <span className="flex items-center gap-2 text-xl justify-center">
+              Browse the offers →
             </span>
           </Link>
         </div>
