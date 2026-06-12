@@ -40,6 +40,8 @@ export default function TermsConditionBox({ offer }: { offer?: OfferData }) {
       <div className="max-w-screen-xl mx-auto px-8 py-16 bg-[#111525] rounded-2xl border border-[#747271]">
         <h2 className="text-3xl font-semibold mb-4">Terms & Conditions</h2>
         <p className="text-slate-400 text-lg leading-relaxed">{offer?.terms}</p>
+
+        <h3 className="text-2xl font-semibold mt-8 mb-4">Useful Links</h3>
         {offer?.useful_link_1 && (
           <a
             href={offer.useful_link_1}

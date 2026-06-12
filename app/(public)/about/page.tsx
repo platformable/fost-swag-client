@@ -27,7 +27,7 @@ export default function AboutPage() {
       w-[500px]
       rounded-full
       bg-red-500/20
-      blur-[140px]
+      blur-[140px] hidden xl:block
     "
         />
 
