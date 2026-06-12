@@ -4,7 +4,7 @@ import AboutCta from "@/app/components/About/AboutCta"
 export default function AboutPage() {
   return (
     <>
-      <section className="text-white antialiased min-h-screen py-16 px-4 sm:px-6 lg:px-8  justify-center">
+      <section className="text-white antialiased min-h-screen pb-16 pt-3 px-4 sm:px-6 lg:px-8  justify-center">
         <div
           className="hidden xl:block
       absolute
