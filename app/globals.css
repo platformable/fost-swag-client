@@ -180,12 +180,8 @@ input::-ms-input-placeholder {
   background: linear-gradient(90deg, #fc6200, #dd312a);
   border-radius: 50px;
   color: #ffffff;
-
   padding: 16px 36px;
   border: none;
-  font-weight: 700;
-  font-size: 1.125rem;
-  cursor: pointer;
 
   transition:
     transform 0.2s ease,
@@ -195,6 +191,7 @@ input::-ms-input-placeholder {
 .btn-hero-cta:hover {
   background: linear-gradient(90deg, #ff7a1a, #e8382f);
   box-shadow: 0 4px 12px rgba(252, 98, 0, 0.3);
+  cursor: pointer;
 }
 
 .btn-hero-cta:active {
